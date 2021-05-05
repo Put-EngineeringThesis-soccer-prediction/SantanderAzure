@@ -1,3 +1,4 @@
+import os
 import pyodbc
 import pandas as pd
 import io
@@ -6,7 +7,7 @@ from azure.storage.filedatalake import DataLakeServiceClient, DelimitedTextDiale
 
 
 storage_account_name = "mgrhdsantanderdl2"
-storage_account_key = "****"
+storage_account_key = os.environ['storage_account_key']
 container_name = "khd-datalake"
 directory_name = "tpc-h"
 service_client = DataLakeServiceClient(account_url="{}://{}.dfs.core.windows.net".format(

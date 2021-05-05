@@ -1,12 +1,13 @@
+import os
 from sqlalchemy import text
 from sqlalchemy import create_engine
 from sqlalchemy.engine import URL
 import pandas as pd
 
-server = '####'
-database = '####'
-username = '####'
-password = '####'
+server = 'mgrhd-santander-khd.sql.azuresynapse.net'
+database = 'stdmgrkhd'
+username = 'sqladmin'
+password = os.environ['dbpassword']
 connection_string = f"Driver={{ODBC Driver 13 for SQL Server}};Server=tcp:{server},1433;Database={database};Uid={username};Pwd={password};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
 connection_url = URL.create("mssql+pyodbc", query={"odbc_connect": connection_string})
 
