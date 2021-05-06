@@ -6,7 +6,7 @@ import sys
 from azure.storage.filedatalake import DataLakeServiceClient, DelimitedTextDialect
 
 
-storage_account_name = "mgrhdsantanderdl2"
+storage_account_name = "mgrhdstddl2"
 storage_account_key = os.environ['storage_account_key']
 container_name = "khd-datalake"
 directory_name = "tpc-h"

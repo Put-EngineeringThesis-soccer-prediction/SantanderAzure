@@ -5,7 +5,7 @@ import pandas as pd
 import io
 import sys
 from azure.storage.filedatalake import DataLakeServiceClient
-server = 'mgrhd-santander-khd.sql.azuresynapse.net'
+server = 'mgrhd-santander.sql.azuresynapse.net'
 database = 'stdmgrkhd'
 username = 'sqladmin'
 password = os.environ['dbpassword']
@@ -24,7 +24,7 @@ df5 = pd.read_sql(QUERY, con=conn)
 
 
 
-storage_account_name = "mgrhdsantanderdl2"
+storage_account_name = "mgrhdstddl2"
 storage_account_key = os.environ['storage_account_key']
 container_name = "khd-datalake"
 directory_name = "test-python-output"

@@ -18,7 +18,8 @@ from azure.mgmt.containerinstance.models import (ContainerGroup,
 # Retrieve the IDs and secret to use with ClientSecretCredential
 arguments = sys.argv[1:]
 script_to_run = arguments[0]
-
+container_name = arguments[1]
+resource_group_name = arguments[2]
 os.system(f"py {script_to_run}")
 
 auth_file_path = os.getenv('AZURE_AUTH_LOCATION', None)
@@ -33,4 +34,4 @@ if auth_file_path is not None:
 else:
     print("\nFailed to authenticate to Azure. Have you set the")
 
-aci_client.container_groups.delete("test-docker", "mycontainer-mgrstd")
+aci_client.container_groups.delete(resource_group_name, container_name)
