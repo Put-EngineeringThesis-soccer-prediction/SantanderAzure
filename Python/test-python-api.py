@@ -21,6 +21,7 @@ arguments = sys.argv[1:]
 script_to_run = arguments[0]
 container_name = arguments[1]
 resource_group_name = arguments[2]
+to_delete = arguments[3]
 subprocess.run(["python", str(script_to_run)])
 
 auth_file_path = os.getenv('AZURE_AUTH_LOCATION', None)
@@ -35,4 +36,5 @@ if auth_file_path is not None:
 else:
     print("\nFailed to authenticate to Azure. Have you set the")
 
-aci_client.container_groups.delete(resource_group_name, container_name)
+if to_delete:
+    aci_client.container_groups.delete(resource_group_name, container_name)
