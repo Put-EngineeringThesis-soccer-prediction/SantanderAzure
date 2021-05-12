@@ -4,7 +4,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.engine import URL
 import pandas as pd
 
-server = 'mgrhd-santander-khd.sql.azuresynapse.net'
+server = 'mgrhd-santander.sql.azuresynapse.net'
 database = 'stdmgrkhd'
 username = 'sqladmin'
 password = os.environ['dbpassword']
