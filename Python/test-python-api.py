@@ -1,5 +1,6 @@
 import os
 import sys
+import subprocess
 from azure.common.client_factory import get_client_from_auth_file
 from azure.mgmt.resource import ResourceManagementClient
 from azure.mgmt.containerinstance import ContainerInstanceManagementClient
@@ -20,7 +21,7 @@ arguments = sys.argv[1:]
 script_to_run = arguments[0]
 container_name = arguments[1]
 resource_group_name = arguments[2]
-os.system(f"python {script_to_run}")
+subprocess.run(f"python {script_to_run}")
 
 auth_file_path = os.getenv('AZURE_AUTH_LOCATION', None)
 print(auth_file_path)
@@ -34,4 +35,4 @@ if auth_file_path is not None:
 else:
     print("\nFailed to authenticate to Azure. Have you set the")
 
-aci_client.container_groups.delete(resource_group_name, container_name)
+# aci_client.container_groups.delete(resource_group_name, container_name)
