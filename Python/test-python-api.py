@@ -35,4 +35,4 @@ if auth_file_path is not None:
 else:
     print("\nFailed to authenticate to Azure. Have you set the")
 
-# aci_client.container_groups.delete(resource_group_name, container_name)
+aci_client.container_groups.delete(resource_group_name, container_name)
