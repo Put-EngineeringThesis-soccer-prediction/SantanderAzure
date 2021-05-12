@@ -20,7 +20,7 @@ arguments = sys.argv[1:]
 script_to_run = arguments[0]
 container_name = arguments[1]
 resource_group_name = arguments[2]
-os.system(f"py {script_to_run}")
+os.system(f"python {script_to_run}")
 
 auth_file_path = os.getenv('AZURE_AUTH_LOCATION', None)
 print(auth_file_path)
